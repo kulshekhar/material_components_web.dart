@@ -1,0 +1,22 @@
+name: material_components_web
+description: Dart interface to Material Components for the web
+version: 0.0.1
+author: kulshekhar <kulshekhar+dart@gmail.com>
+homepage: https://github.com/kulshekhar/material_components_web
+
+environment:
+  sdk: '>=1.8.0 <2.0.0'
+
+dependencies:
+  js: ^0.6.1
+  angular2: 3.0.0-alpha
+
+dev_dependencies:
+  test: '>=0.12.0 <0.13.0'
+  
+transformers:
+- angular2:
+    platform_directives:
+    - 'package:angular2/common.dart#COMMON_DIRECTIVES'
+    platform_pipes:
+    - 'package:angular2/common.dart#COMMON_PIPES'
