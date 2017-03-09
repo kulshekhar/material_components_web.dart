@@ -1,2 +1,2 @@
-<input #input1 class="mdc-textfield__input" type="{{type}}" [(ngModel)]="value">
+<input #input1 class="mdc-textfield__input" type="{{type}}" [(ngModel)]="value" (input)="handleInputChange($event)">
 <label #label1 class="mdc-textfield__label">{{label}}</label>
