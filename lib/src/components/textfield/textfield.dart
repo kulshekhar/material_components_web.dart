@@ -23,15 +23,26 @@ class MDCTextfieldComponent extends MDCBase implements OnInit, OnDestroy {
   String type = 'text';
 
   @Input()
-  bool required;
+  bool required = false;
+  @Input()
+  bool focus = false;
 
+  @Input()
   String value;
+  @Output()
+  EventEmitter<String> valueChange = new EventEmitter<String>();
 
   @override
   ngOnInit() {
     ref.nativeElement.classes.add('mdc-textfield');
     (input1.nativeElement as InputElement).required = required;
 
+    if (focus) (input1.nativeElement as InputElement).autofocus = true;
+
     mdcComponent = new MDCTextfield(ref.nativeElement);
+  }
+
+  handleInputChange(Event e) {
+    valueChange.emit((e.target as InputElement).value);
   }
 }
